@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué te pareció la página de los Vikingos?</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .formulario-opinion {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .rating {
+            display: inline-block;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            float: right;
+            color: #ddd;
+            font-size: 2em;
+            padding: 5px;
+            text-decoration: none;
+            transition: color .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: gold;
+        }
+
+        .rating input:checked ~ label {
+            color: gold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #c75b39; /* Un tono rojizo/naranja vikingo */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a64a2e;
+        }
+
+        .mensaje-agradecimiento {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #5cb85c;
+            display: none; /* Asegúrate de que esté oculto inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario-opinion">
+        <h2>¿Qué te pareció nuestra página sobre los Vikingos?</h2>
+        <form id="opinionForm">
+            <div class="pregunta">
+                <label for="calificacion">Calificación general:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="calificacion" value="5"><label for="star5">★</label>
+                    <input type="radio" id="star4" name="calificacion" value="4"><label for="star4">★</label>
+                    <input type="radio" id="star3" name="calificacion" value="3"><label for="star3">★</label>
+                    <input type="radio" id="star2" name="calificacion" value="2"><label for="star2">★</label>
+                    <input type="radio" id="star1" name="calificacion" value="1"><label for="star1">★</label>
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <label for="aspectos-gustaron">¿Qué aspectos te gustaron más?</label>
+                <textarea id="aspectos-gustaron" rows="3"></textarea>
+            </div><div class="pregunta">
+                <label for="aspectos-mejorar">¿Qué podríamos mejorar?</label>
+                <textarea id="aspectos-mejorar" rows="3"></textarea>
+            </div>
+
+            <button type="submit">Enviar Opinión</button>
+        </form>
+    </div>
+</body>
+</html>
